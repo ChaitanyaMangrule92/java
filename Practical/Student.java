@@ -1,33 +1,36 @@
-package CM5;
+package CollectionEg;
 
-public class Student {
-	int id;
-	String name;
+public class Student implements Comparable<Student> {
+
+	int sid;
+	String sname;
+	long sphone;
 	int age;
 
-	Student(int i,String n){ id = i;
-	name = n;
-
-	}
-
-	Student(int i,String n,int a){ id = i;
 	
-	name = n; age=a;
-	}
-
-	void display(){System.out.println(id+" "+name+" "+age);}
-	
-	public static void main(String args[]){
+	public Student(int sid, String sname, long sphone, int age) {
 		
-	Student s1 = new Student(20,"Chaitanya",30);
-	
-	Student s2 = new Student(21,"Dayavan",50); s1.display();
-	
-	s2.display();
-
+		super( );
+		this.sid = sid;
+		this.sname = sname;
+		this.sphone = sphone;
+		this.age = age;
 	}
+		
+	    @Override
+	    public int compareTo(Student s) {
+	    	if(age == s.age)
+	    	return 0;
+	    	else if (age > s.age)
+	    	   return 1;
+	    	   else
+	    	return-1;
+	    	
+	    }
+	    	   
+	    	
+	    }
 
-	}
-	 
+	
 
 
